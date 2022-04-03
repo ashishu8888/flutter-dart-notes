@@ -1,0 +1,21 @@
+void main(List<String> args) {
+  test();
+}
+/* Synchronous Generator: Returns an Iterable object.
+Asynchronous Generator: Returns a Stream object.
+*/
+
+
+// Synchronous Generator
+Iterable<int> getOneTwoThree() sync* {
+  yield 1;
+  yield 2;
+  yield 3;
+}
+
+void test() {
+  for (final item in getOneTwoThree()) {
+    print(item);
+    if (item == 2) break;
+  }
+}
